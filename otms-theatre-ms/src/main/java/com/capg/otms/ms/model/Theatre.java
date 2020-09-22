@@ -99,7 +99,7 @@ public class Theatre {
 		this.managerContact = managerContact;
 	}
 
-	@Override                                 //overriding the object class method in this class
+	@Override            //overriding the object class method in this class
 	public String toString() {
 		return "Theatre [theatreId=" + theatreId + ", theatreName=" + theatreName + ", theatreCity=" + theatreCity
 				+ ", movies=" + movies + ", listOfScreens=" + listOfScreens + ", managerName=" + managerName

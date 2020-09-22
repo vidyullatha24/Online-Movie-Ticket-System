@@ -30,7 +30,7 @@ public class Screen {
 		private List<Show> showList= new ArrayList<>();
 		@DateTimeFormat(pattern = "yyyy/MM/dd ")            //to print localized field value
 		private LocalDate movieEndDate;
-		@Column(name = "rows_details")             //details of the column to which the fied property to be mapped
+		@Column(name = "rows_details")             //details of the column to which the field property to be mapped
 		private int rows;
 		@Column(name = "columns_details")
 		private int columns;

@@ -1,6 +1,7 @@
 package com.capg.otms.ms.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,14 +12,13 @@ import com.capg.otms.ms.exception.TheatreException;
 import com.capg.otms.ms.model.Theatre;
 import com.capg.otms.ms.reprository.ITheatreRepo;
 
-@Service
 public class TheatreServiceImpl implements ITheatreService {
-	
 	
 	@Autowired
 	ITheatreRepo theatreRepo;
-
 	
+	 //Throws TheatreAlreadyExistException, Invalid Input Exception
+	 //Adding Theatre to database
 	public Theatre addTheatre(Theatre theatre) {
 		Integer theatreId = theatre.getTheatreId();
 		if (theatreId == 0) {
@@ -31,6 +31,8 @@ public class TheatreServiceImpl implements ITheatreService {
 	}
 
 	
+	 //Throws Invalid Input Exception,TheatreException
+	 //Updating Theatre in database
 	public Theatre updateTheatre(Theatre theatre) {
 		Integer theatreId = theatre.getTheatreId();
 		if (theatreId == 0) {
@@ -50,7 +52,9 @@ public class TheatreServiceImpl implements ITheatreService {
 		}
 		return theatre;
 	}
-
+	
+	 //Deleting Theatre in database
+	
 	public boolean deleteTheatreById(Integer theatreId) {
 
 		if (theatreRepo.existsById(theatreId)) {
@@ -64,19 +68,23 @@ public class TheatreServiceImpl implements ITheatreService {
 	}
 
 	
+	 //Throws TheatreException
+	 //Shows All the Theatres present in Database
 	public List<Theatre> findAllTheatres() {
 
 		return theatreRepo.findAll();
 	}
 
-	
+	 //Fetching Theatre from Database
 	public Theatre getTheatreByName(String theatreName) {
 
 		return theatreRepo.getByTheatreName(theatreName);
 	}
 
 	
-	@Override
+	 //Throws TheatreException
+	 // Validates the TheatreDetails while adding Theatre into Database
+	                                                                                                         //@Override
 	public boolean validateTheatreId(Integer theatreId) {
 		String theatre = Integer.toString(theatreId);
 		if (!(theatre.length() >= 4 && theatre.charAt(0) == '2')) {
@@ -85,8 +93,9 @@ public class TheatreServiceImpl implements ITheatreService {
 		return true;
 	}
 
-	
-	@Override
+	 //Throws Invalid Input Exception
+	 //from Database based on given Id
+	                                                                                                         //@Override
 	public Theatre getTheatreById(Integer theatreId) {
 		return theatreRepo.getByTheatreId(theatreId);
 	}
