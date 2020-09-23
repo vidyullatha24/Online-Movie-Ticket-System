@@ -3,7 +3,7 @@ package com.capg.otms.ms.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.ElementCollection;
+//import javax.persistence.ElementCollection;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

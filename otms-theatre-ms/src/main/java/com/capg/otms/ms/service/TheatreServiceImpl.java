@@ -1,8 +1,6 @@
 package com.capg.otms.ms.service;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +10,7 @@ import com.capg.otms.ms.exception.TheatreException;
 import com.capg.otms.ms.model.Theatre;
 import com.capg.otms.ms.reprository.ITheatreRepo;
 
+@Service                             //indicates that the class is a service provider
 public class TheatreServiceImpl implements ITheatreService {
 	
 	@Autowired
